@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#b9e5ff" />
+  <meta name="description" content="MOOD — a pastel-pop music discovery app demo." />
+  <title>MOOD — music for your moment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#discover" data-view-link="discover" aria-label="MOOD home"><span class="brand-mark">♫</span><span>mood<span class="brand-dot">.</span></span></a>
+      <div class="sidebar-label">YOUR SPACE</div>
+      <nav class="nav-list">
+        <button class="nav-item active" data-view="discover"><span class="nav-icon">⌂</span><span>Discover</span></button>
+        <button class="nav-item" data-view="moods"><span class="nav-icon">☼</span><span>Moods</span></button>
+        <button class="nav-item" data-view="playlists"><span class="nav-icon">▤</span><span>Playlists</span></button>
+        <button class="nav-item" data-view="player"><span class="nav-icon">♫</span><span>Now playing</span></button>
+        <button class="nav-item" data-view="profile"><span class="nav-icon">☺</span><span>My profile</span></button>
+      </nav>
+      <div class="sidebar-note"><span class="note-star">✦</span><p>tiny reminder</p><strong>Your life deserves a soundtrack.</strong><span class="note-squiggle">♡ ♡ ♡</span></div>
+      <div class="sidebar-bottom"><span class="online-dot"></span> made for your current mood</div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="mobile-brand"><span class="brand-mark">♫</span> mood<span class="brand-dot">.</span></div>
+        <div class="greeting-mini">YOUR LITTLE CORNER OF SOUND <span>✦</span></div>
+        <div class="top-actions">
+          <label class="search-box"><span>⌕</span><input id="globalSearch" type="search" placeholder="Find a song, mood..." aria-label="Search songs and moods"></label>
+          <button class="avatar-button" data-view="profile" aria-label="Open profile">J</button>
+        </div>
+      </header>
+
+      <!-- DISCOVER SCREEN -->
+      <section class="view active-view" id="view-discover" aria-labelledby="discoverTitle">
+        <div class="view-heading"><div><p class="eyebrow">TUESDAY, BUT MAKE IT A VIBE <span>✿</span></p><h1 id="discoverTitle">What does your day<br><em>sound like?</em></h1><p class="subhead">A little music for wherever your heart is today.</p></div><div class="hello-sticker" aria-hidden="true"><span>press play</span><b>♡</b><small>and breathe</small></div></div>
+        <div class="feature-card">
+          <div class="feature-copy"><span class="pill pill-white">✦ MADE FOR YOU</span><p class="feature-kicker">YOUR DAILY MIX</p><h2>Soft launch<br>your happy era.</h2><p>For main-character walks, pretty little routines and doing your best.</p><button class="primary-button" id="playDailyMix">▶ Play this mix</button></div>
+          <div class="feature-art" aria-label="Decorative pastel album artwork"><div class="sun-disc"></div><div class="art-cloud cloud-one"></div><div class="art-cloud cloud-two"></div><div class="art-flower">✿</div><div class="art-caption">good<br>things<br>ahead.</div><span class="art-spark spark-one">✦</span><span class="art-spark spark-two">♡</span></div>
+          <span class="feature-tape">MOOD CLUB • VOL. 01</span>
+        </div>
+        <div class="section-heading"><div><p class="eyebrow">CHECK IN WITH YOURSELF</p><h2>How are we feeling?</h2></div><button class="text-link" data-view="moods">All moods <span>↗</span></button></div>
+        <div class="mood-row" id="homeMoodRow">
+          <button class="mood-chip mood-pink" data-mood="Happy"><span>☀</span> Happy</button><button class="mood-chip mood-lilac" data-mood="Dreamy"><span>☁</span> Dreamy</button><button class="mood-chip mood-blue" data-mood="Focused"><span>✧</span> Focused</button><button class="mood-chip mood-peach" data-mood="Heartbroken"><span>♡</span> In my feels</button><button class="mood-chip mood-green" data-mood="Confident"><span>✦</span> Confident</button>
+        </div>
+        <div class="section-heading track-heading"><div><p class="eyebrow">ON REPEAT LATELY</p><h2>Little earworms</h2></div><button class="text-link" data-view="playlists">Explore playlists <span>↗</span></button></div>
+        <div class="track-list" id="discoverTracks"></div>
+      </section>
+
+      <!-- MOODS SCREEN -->
+      <section class="view" id="view-moods" aria-labelledby="moodsTitle">
+        <div class="screen-intro"><p class="eyebrow">NO MOOD IS THE WRONG MOOD <span>♡</span></p><h1 id="moodsTitle">Pick your <em>feeling.</em></h1><p class="subhead">Choose a vibe and we'll find your next repeat song.</p></div>
+        <div class="mood-grid" id="moodGrid">
+          <button class="mood-tile tile-happy" data-mood="Happy"><span class="tile-emoji">☀</span><span><strong>Happy</strong><small>sunshine in headphones</small></span><b>↗</b></button>
+          <button class="mood-tile tile-dreamy" data-mood="Dreamy"><span class="tile-emoji">☁</span><span><strong>Dreamy</strong><small>head in the clouds</small></span><b>↗</b></button>
+          <button class="mood-tile tile-focused" data-mood="Focused"><span class="tile-emoji">✧</span><span><strong>Focused</strong><small>in my own little world</small></span><b>↗</b></button>
+          <button class="mood-tile tile-feels" data-mood="Heartbroken"><span class="tile-emoji">♡</span><span><strong>In my feels</strong><small>soft songs, softer heart</small></span><b>↗</b></button>
+          <button class="mood-tile tile-confident" data-mood="Confident"><span class="tile-emoji">✦</span><span><strong>Confident</strong><small>walk like you mean it</small></span><b>↗</b></button>
+          <button class="mood-tile tile-calm" data-mood="Calm"><span class="tile-emoji">☾</span><span><strong>Calm</strong><small>let the day exhale</small></span><b>↗</b></button>
+        </div>
+        <div class="section-heading mood-results-heading"><div><p class="eyebrow" id="moodResultEyebrow">YOUR VIBE, YOUR SONGS</p><h2 id="moodResultTitle">A little bit of everything</h2></div><button class="text-link" id="clearMood">Clear filter ×</button></div>
+        <div class="track-list" id="moodTracks"></div>
+      </section>
+
+      <!-- PLAYLISTS SCREEN -->
+      <section class="view" id="view-playlists" aria-labelledby="playlistsTitle">
+        <div class="screen-intro"><p class="eyebrow">LITTLE WORLDS OF SOUND <span>✿</span></p><h1 id="playlistsTitle">Your next <em>soundtrack.</em></h1><p class="subhead">Curated feelings for every version of you.</p></div>
+        <div class="playlist-grid" id="playlistGrid">
+          <button class="playlist-card playlist-pink" data-playlist="pink"><span class="playlist-count">12 LITTLE SONGS</span><div class="playlist-art art-pink"><span class="art-heart">♥</span><span class="art-star">✦</span><b>pink<br>daydream</b></div><span class="playlist-title">Pink Daydream</span><span class="playlist-description">soft pop · rosy thoughts</span><span class="playlist-open">Open playlist ↗</span></button>
+          <button class="playlist-card playlist-blue" data-playlist="blue"><span class="playlist-count">10 LITTLE SONGS</span><div class="playlist-art art-blue"><span class="art-moon">☾</span><span class="art-star">✧</span><b>cloud<br>nine</b></div><span class="playlist-title">Cloud Nine</span><span class="playlist-description">floaty · slow mornings</span><span class="playlist-open">Open playlist ↗</span></button>
+          <button class="playlist-card playlist-yellow" data-playlist="main"><span class="playlist-count">15 LITTLE SONGS</span><div class="playlist-art art-yellow"><span class="art-sun">☼</span><span class="art-star">✦</span><b>main<br>character</b></div><span class="playlist-title">Main Character Energy</span><span class="playlist-description">bold pop · big energy</span><span class="playlist-open">Open playlist ↗</span></button>
+          <button class="playlist-card playlist-lilac" data-playlist="study"><span class="playlist-count">8 LITTLE SONGS</span><div class="playlist-art art-lilac"><span class="art-flower-big">✿</span><span class="art-star">✦</span><b>study<br>café</b></div><span class="playlist-title">Study Café</span><span class="playlist-description">focus beats · cozy hours</span><span class="playlist-open">Open playlist ↗</span></button>
+        </div>
+        <div class="playlist-detail hidden" id="playlistDetail"><button class="back-link" id="backToPlaylists">← All playlists</button><div class="detail-head"><div class="detail-cover" id="detailCover">♡</div><div><p class="eyebrow">YOUR LITTLE SOUND WORLD</p><h2 id="detailTitle">Pink Daydream</h2><p id="detailDescription">soft pop · rosy thoughts</p><button class="primary-button" id="playPlaylist">▶ Play playlist</button></div></div><div class="section-heading"><div><p class="eyebrow">THE TRACKLIST</p><h2>On this playlist</h2></div></div><div class="track-list" id="playlistTracks"></div></div>
+      </section>
+
+      <!-- PLAYER SCREEN -->
+      <section class="view player-view" id="view-player" aria-labelledby="playerTitle">
+        <div class="screen-intro player-intro"><p class="eyebrow">YOUR PERSONAL LISTENING ROOM <span>♫</span></p><h1 id="playerTitle">Now <em>playing.</em></h1><p class="subhead">Take a tiny break. This moment is yours.</p></div>
+        <div class="player-layout"><div class="vinyl-stage"><div class="vinyl"><div class="vinyl-label"><span>mood.</span><b>♫</b></div></div><div class="vinyl-spark spark-a">✦</div><div class="vinyl-spark spark-b">♡</div></div><div class="player-panel"><div class="playing-badge"><span class="equalizer"><i></i><i></i><i></i></span> NOW PLAYING</div><h2 id="currentTitle">Peach Soda Skies</h2><p id="currentArtist">Luna Bloom</p><button class="heart-button" id="likeCurrent" aria-label="Like current song">♡</button><div class="progress-wrap"><input type="range" id="progress" min="0" max="180" value="34" aria-label="Track progress"><div class="time-row"><span id="elapsedTime">0:34</span><span id="durationTime">3:00</span></div></div><div class="player-controls"><button id="previousTrack" aria-label="Previous track">|◀</button><button class="play-large" id="togglePlay" aria-label="Play or pause">▶</button><button id="nextTrack" aria-label="Next track">▶|</button></div><p class="player-caption" id="playerStatus">Your little soundtrack is ready ♡</p></div></div>
+      </section>
+
+      <!-- PROFILE SCREEN -->
+      <section class="view" id="view-profile" aria-labelledby="profileTitle">
+        <div class="screen-intro"><p class="eyebrow">THIS CORNER IS ALL YOURS <span>♡</span></p><h1 id="profileTitle">Hi, <em>daydreamer.</em></h1><p class="subhead">Your listening personality, in little pieces.</p></div>
+        <div class="profile-hero"><div class="profile-avatar">J<span>✦</span></div><div class="profile-copy"><p class="eyebrow">MOOD MEMBER SINCE TODAY</p><h2>Jamie Daydream</h2><p>Collector of songs and small happy moments.</p><button class="outline-button" id="editProfile">✎ Edit display name</button></div><div class="profile-doodle">♡<small>stay<br>soft</small></div></div>
+        <div class="stats-grid"><div class="stat-card"><span>♡</span><strong id="likedCount">0</strong><small>songs loved</small></div><div class="stat-card"><span>♫</span><strong id="playedCount">0</strong><small>songs played</small></div><div class="stat-card"><span>✿</span><strong>5</strong><small>moods explored</small></div></div>
+        <div class="section-heading"><div><p class="eyebrow">YOUR FOREVER FAVES</p><h2>Liked songs</h2></div><span class="saved-label" id="savedLabel">saved with love ♡</span></div><div class="track-list" id="likedTracks"></div>
+      </section>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </main>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <button class="mobile-nav-item active" data-view="discover"><span>⌂</span><small>Home</small></button>
+      <button class="mobile-nav-item" data-view="moods"><span>☼</span><small>Moods</small></button>
+      <button class="mobile-nav-item mobile-play" data-view="player" aria-label="Now playing"><span>♫</span></button>
+      <button class="mobile-nav-item" data-view="playlists"><span>▤</span><small>Mixes</small></button>
+      <button class="mobile-nav-item" data-view="profile"><span>☺</span><small>You</small></button>
+    </nav>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
