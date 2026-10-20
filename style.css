@@ -5,10 +5,7 @@
 @media(max-width:380px){.main-area{padding-left:13px;padding-right:13px}.view-heading h1,.screen-intro h1{font-size:33px}.hello-sticker{width:69px;height:69px}.feature-copy h2{font-size:27px}.feature-card{grid-template-columns:1fr .5fr;padding-left:14px}.feature-tape{left:14px}.art-flower{right:0}.playlist-art{height:114px}.playlist-art b{font-size:21px}.profile-hero{gap:9px;padding:13px}.profile-avatar{width:57px;height:57px}.profile-copy h2{font-size:19px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
-/* ─────────────────────────────────────────────────────────────
-   PASTEL RETRO-POP REFRESH — baby blue × candy pink × butter yellow
-   Inspired by bright, dreamy pop visuals; not an official artist theme.
-   ───────────────────────────────────────────────────────────── */
+
 :root{
   --ink:#293b63;
   --muted:#7f8eaa;
