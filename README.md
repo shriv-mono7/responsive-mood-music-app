@@ -2,13 +2,6 @@
 
 A responsive, pastel retro-pop music discovery app built for a front-end internship project. The refreshed visual theme uses baby blue, candy pink and butter yellow, with dreamy pop stickers and retro album-card details. The app uses a multi-screen layout rather than one long landing page.
 
-## Open it in VS Code
-1. Download and extract the project ZIP.
-2. Open VS Code.
-3. Select **File → Open Folder...** and choose the extracted `mood-music-app` folder.
-4. Open `index.html`.
-5. Recommended: install the **Live Server** extension, right-click `index.html`, and select **Open with Live Server**. Or open `index.html` directly in your browser.
-
 ## Screens
 - **Discover:** featured mix, mood shortcuts and tracks.
 - **Moods:** choose a feeling to filter songs.
